@@ -1,0 +1,245 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Serif+Display&family=Inter:wght@300;400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --deep-black: #0A0A0A;
+    --ivory: #F6F2EB;
+    --champagne: #C7A878;
+    --warm-beige: #E6D9C6;
+    --muted-grey: #8A8A8A;
+    --border-grey: #1A1A1A;
+    --border-light: #D4CFC8;
+  }
+
+  html {
+    scroll-behavior: auto;
+    background-color: var(--deep-black);
+    color: var(--ivory);
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    background-color: var(--deep-black);
+    color: var(--ivory);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background-color: var(--champagne);
+    color: var(--deep-black);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    line-height: 0.92;
+  }
+}
+
+@layer components {
+  .font-display {
+    font-family: 'Cormorant Garamond', serif;
+  }
+
+  .font-accent {
+    font-family: 'DM Serif Display', serif;
+  }
+
+  .font-body {
+    font-family: 'Inter', sans-serif;
+  }
+
+  .text-display-xl {
+    font-size: clamp(80px, 15vw, 240px);
+    line-height: 0.88;
+    letter-spacing: -0.03em;
+  }
+
+  .text-display-lg {
+    font-size: clamp(64px, 12vw, 160px);
+    line-height: 0.88;
+    letter-spacing: -0.03em;
+  }
+
+  .text-display-md {
+    font-size: clamp(48px, 8vw, 96px);
+    line-height: 0.92;
+    letter-spacing: -0.02em;
+  }
+
+  .text-display-sm {
+    font-size: clamp(36px, 5vw, 64px);
+    line-height: 1.0;
+    letter-spacing: -0.02em;
+  }
+
+  .text-heading-lg {
+    font-size: clamp(28px, 3vw, 48px);
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+  }
+
+  .text-heading-md {
+    font-size: clamp(22px, 2.5vw, 32px);
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+  }
+
+  .text-body-lg {
+    font-size: clamp(18px, 1.5vw, 20px);
+    line-height: 1.6;
+  }
+
+  .text-body-md {
+    font-size: clamp(15px, 1.2vw, 16px);
+    line-height: 1.6;
+  }
+
+  .text-body-sm {
+    font-size: clamp(13px, 1vw, 14px);
+    line-height: 1.5;
+  }
+
+  .text-label {
+    font-size: clamp(11px, 0.9vw, 12px);
+    line-height: 1.4;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .btn-primary {
+    @apply px-8 py-3 rounded-full border transition-all duration-300;
+    background-color: var(--champagne);
+    border-color: var(--champagne);
+    color: var(--deep-black);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 16px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .btn-primary:hover {
+    background-color: var(--warm-beige);
+    border-color: var(--warm-beige);
+  }
+
+  .btn-secondary {
+    @apply px-8 py-3 rounded-full border transition-all duration-300;
+    background-color: transparent;
+    border-color: rgba(246, 242, 235, 0.3);
+    color: var(--ivory);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 16px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .btn-secondary:hover {
+    background-color: var(--ivory);
+    color: var(--deep-black);
+  }
+
+  .glass-panel {
+    background: rgba(10, 10, 10, 0.8);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(246, 242, 235, 0.1);
+    border-radius: 12px;
+  }
+
+  .section-padding {
+    padding-left: clamp(24px, 5vw, 80px);
+    padding-right: clamp(24px, 5vw, 80px);
+  }
+}
+
+@layer utilities {
+  .text-ivory { color: var(--ivory); }
+  .text-champagne { color: var(--champagne); }
+  .text-muted { color: var(--muted-grey); }
+  .bg-deep-black { background-color: var(--deep-black); }
+  .border-champagne { border-color: var(--champagne); }
+  .border-ivory-15 { border-color: rgba(246, 242, 235, 0.15); }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--deep-black);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-grey);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--muted-grey);
+}
+
+/* Form input styling */
+input, select, textarea {
+  font-family: 'Inter', sans-serif;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+}
+
+/* Animation keyframes */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scrollIndicator {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(60px);
+    opacity: 0;
+  }
+  51% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.animate-scroll-indicator {
+  animation: scrollIndicator 2s ease-in-out infinite;
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
