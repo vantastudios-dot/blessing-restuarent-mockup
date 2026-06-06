@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { createRouter, publicQuery } from "./middleware";
+import { createRouter, publicQuery } from "./middleware.js";
 
 const SYSTEM_PROMPT = `You are Blessings, a luxury restaurant concierge assistant for Blessings Restaurant in Deoria, Uttar Pradesh, India. You are warm, sophisticated, and knowledgeable.
 

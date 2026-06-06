@@ -1,7 +1,7 @@
 import type { FetchCreateContextFnOptions } from "@trpc/server/adapters/fetch";
-import { authenticateRequest } from "./kimi/auth";
-import { verifyLocalToken } from "./localAuth";
-import { getDb } from "./queries/connection";
+import { authenticateRequest } from "./kimi/auth.js";
+import { verifyLocalToken } from "./localAuth.js";
+import { getDb } from "./queries/connection.js";
 import { localUsers } from "@db/schema";
 import { eq } from "drizzle-orm";
 
