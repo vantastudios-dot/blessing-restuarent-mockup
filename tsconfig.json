@@ -2,6 +2,9 @@
   "compilerOptions": {
     "baseUrl": ".",
     "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
     "paths": {
       "@/*": ["./src/*"],
       "@contracts/*": ["./contracts/*"],
@@ -12,5 +15,6 @@
     { "path": "./tsconfig.app.json" },
     { "path": "./tsconfig.node.json" },
     { "path": "./tsconfig.server.json" }
-  ]
+  ],
+  "include": ["server", "api", "contracts", "db", "src"]
 }
